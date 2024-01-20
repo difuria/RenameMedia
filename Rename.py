@@ -36,13 +36,7 @@ class RenameMedia:
         print(f"Renaming:\n{folder}\nto:\n{new_folder_name}")
 
         if not os.path.exists(new_folder_name) and not self.validate:
-            try:
-                # os.rename(folder, new_folder_name)
-                self.__rename(folder, new_folder_name)
-            except Exception as e:
-                import ipdb; ipdb.set_trace()
-
-                print(e)
+            self.__rename(folder, new_folder_name)
                 
         if not self.validate:
             folder = new_folder_name
